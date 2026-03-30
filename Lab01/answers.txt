@@ -1,0 +1,18 @@
+Câu 1: Điều gì xảy ra nếu người dùng chọn "Cancel"?
++ Nếu người dùng chọn "Cancel" trong chương trình ChoosingOption, hộp thoại thông báo sẽ hiển thị: "You've chosen: No".
++ Nguyên nhân: Trong mã nguồn, kết quả đầu ra được quyết định bởi toán tử ba ngôi: (option==JOptionPane.YES_OPTION?"Yes":"No").
+Nếu người dùng nhấn "Cancel", phương thức showConfirmDialog sẽ trả về một số nguyên tương ứng với hằng số JOptionPane.CANCEL_OPTION. Vì giá trị này không bằng JOptionPane.YES_OPTION, điều kiện kiểm tra sẽ trả về sai (false), và chương trình sẽ mặc định in ra "No".
+
+Câu 2: Làm thế nào để tùy chỉnh các lựa chọn cho người dùng?
+Để tùy chỉnh các lựa chọn hiển thị trong hộp thoại, chúng ta sử dụng các tham số hoặc phương thức khác của lớp JOptionPane.
+
+1. Để chỉ hiển thị tùy chọn "Yes" và "No":
+Ta có thể sử dụng một phiên bản nạp chồng (overloaded) của phương thức showConfirmDialog có nhận tham số optionType. Bằng cách truyền vào JOptionPane.YES_NO_OPTION, bạn sẽ loại bỏ được nút "Cancel".
+Code mẫu:
+int option = JOptionPane.showConfirmDialog(null, "Do you want to change to the first class ticket?", "Choose an option", JOptionPane.YES_NO_OPTION);
+
+2. Để hiển thị các tùy chọn tùy chỉnh (ví dụ: "I do" và "I don't"):
+Để định nghĩa chữ hiển thị riêng trên các nút bấm, chúng ta sử dụng phương thức JOptionPane.showOptionDialog. Phương thức này cho phép bạn truyền vào một mảng các đối tượng (như String) để đại diện cho các nút tùy chỉnh.
+Code mẫu:
+Object[] options = {"I do", "I don't"};
+int option = JOptionPane.showOptionDialog(null, "Do you want to change to the first class ticket?", "Choose an option", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
