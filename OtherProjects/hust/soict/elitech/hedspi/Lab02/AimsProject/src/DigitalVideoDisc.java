@@ -1,3 +1,5 @@
+package hust.soict.elitech.hedspi.Lab02.AimsProject.src;
+
 public class DigitalVideoDisc {
     private String title;
     private String category;

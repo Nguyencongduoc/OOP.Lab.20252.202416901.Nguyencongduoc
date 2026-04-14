@@ -1,3 +1,5 @@
+package hust.soict.elitech.hedspi.Lab01;
+
 import java.util.Scanner;
 
 public class InputFromKeyboard {

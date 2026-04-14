@@ -1,3 +1,5 @@
+package hust.soict.elitech.hedspi.Lab02.AimsProject.src;
+
 public class TestPassingParameter {
 
     public static void main(String[] args) {

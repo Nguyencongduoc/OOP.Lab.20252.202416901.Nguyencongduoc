@@ -1,3 +1,5 @@
+package hust.soict.elitech.hedspi.Lab02.AimsProject.src;
+
 public class Cart {
     private int qtyOrdered = 0;
     private final int maxItem = 20;
