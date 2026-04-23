@@ -1,0 +1,41 @@
+package src.hust.soict.hedspi.aims.media;
+import java.util.Comparator;
+public abstract class Media {
+    private int id;
+    private String title;
+    private String category;
+    private float cost;
+    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
+    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
+    // Cập nhật constructor
+    public Media(int id, String title, String category, float cost) {
+        this.id = id;
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+    }
+
+    public int getId() { return id; }
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
+    public String getCategory() { return category; }
+    public float getCost() { return cost; }
+    @Override
+    public boolean equals(Object obj) {
+        // 1. Nếu 2 đối tượng trỏ đến cùng 1 vùng nhớ -> chắc chắn giống nhau
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Media)) {
+            return false;
+        }
+
+        // 2. Ép kiểu an toàn và so sánh tiêu đề
+        Media other = (Media) obj;
+        if (this.title != null && this.title.equalsIgnoreCase(other.getTitle())) {
+            return true;
+        }
+
+        return false;
+    }
+}

@@ -1,34 +1,33 @@
 package src.hust.soict.hedspi.test.store;
 
 import src.hust.soict.hedspi.aims.store.Store;
-import src.hust.soict.hedspi.aims.disc.DigitalVideoDisc;
+import src.hust.soict.hedspi.aims.media.DigitalVideoDisc;
 public class StoreTest {
     public static void main(String[] args) {
         // Tạo một cửa hàng mới
         Store store = new Store();
 
-        // Tạo các DVD mẫu
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 124, 24.95f);
-        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", "John Musker", 90, 18.99f);
+        DigitalVideoDisc dvd1 = new DigitalVideoDisc(1, "The Lion King", "Animation", 19.95f, 87, "Roger Allers");
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc(2, "Star Wars", "Science Fiction", 24.95f, 124, "George Lucas");
+        DigitalVideoDisc dvd3 = new DigitalVideoDisc(3, "Aladin", "Animation", 18.99f, 90, "John Musker");
 
-        // 1. Test chức năng thêm (add)
-        store.addDVD(dvd1);
-        store.addDVD(dvd2);
-        store.addDVD(dvd3);
+        System.out.println("1. Test chức năng thêm (add)");
+        store.addMedia(dvd1);
+        store.addMedia(dvd2);
+        store.addMedia(dvd3);
 
-        // In ra kho để kiểm tra
-        store.printStore();
+        // In ra kho để kiểm tra (Đảm bảo file Store.java của bạn có hàm displayStore hoặc printStore)
+        store.displayStore(); // Nếu bên Store.java bạn viết là printStore() thì sửa lại dòng này nhé
 
-        // 2. Test chức năng xóa (remove)
+        // Test chức năng xóa (remove)
         System.out.println("\n-- Tiến hành xóa đĩa Star Wars --");
-        store.removeDVD(dvd2);
+        store.removeMedia(dvd2); // Đổi removeDVD thành removeMedia
 
         // In lại kho để kiểm tra xem đã mất Star Wars chưa
-        store.printStore();
+        store.displayStore();
 
-        // 3. Test trường hợp xóa đĩa không tồn tại
+        // Test trường hợp xóa đĩa không tồn tại
         System.out.println("\n-- Tiến hành xóa lại đĩa Star Wars --");
-        store.removeDVD(dvd2); // Đĩa này vừa bị xóa rồi nên sẽ báo không tìm thấy
+        store.removeMedia(dvd2);
     }
 }
