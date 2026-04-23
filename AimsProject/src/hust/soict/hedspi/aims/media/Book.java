@@ -20,4 +20,9 @@ public class Book extends Media {
             authors.remove(authorName);
         }
     }
+    @Override
+    public String toString() {
+        // authors.toString() sẽ in danh sách tác giả ngăn cách bởi dấu phẩy
+        return "Book - " + getTitle() + " - " + getCategory() + " - Authors: " + authors.toString() + ": " + getCost() + " $";
+    }
 }

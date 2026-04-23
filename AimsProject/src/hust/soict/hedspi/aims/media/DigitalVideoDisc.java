@@ -15,4 +15,8 @@ public class DigitalVideoDisc extends Disc implements Playable {
             System.out.println("DVD " + this.getTitle() + " cannot be played.");
         }
     }
+    @Override
+    public String toString() {
+        return "DVD - " + getTitle() + " - " + getCategory() + " - " + getDirector() + " - " + getLength() + ": " + getCost() + " $";
+    }
 }

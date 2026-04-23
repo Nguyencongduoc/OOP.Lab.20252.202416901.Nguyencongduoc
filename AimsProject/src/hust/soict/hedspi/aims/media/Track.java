@@ -42,4 +42,8 @@ public class Track implements Playable {
 
         return false;
     }
+    @Override
+    public String toString() {
+        return "Track: " + title + " (Length: " + length + ")";
+    }
 }

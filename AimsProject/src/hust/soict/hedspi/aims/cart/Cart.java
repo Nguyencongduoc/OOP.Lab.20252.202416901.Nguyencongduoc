@@ -2,7 +2,8 @@ package src.hust.soict.hedspi.aims.cart;
 
 import src.hust.soict.hedspi.aims.media.Media;
 import java.util.ArrayList;
-
+import java.util.Comparator;
+import java.util.Collections;
 public class Cart {
     private ArrayList<Media> itemsOrdered = new ArrayList<>();
 
@@ -75,5 +76,20 @@ public class Cart {
         if (!found) {
             System.out.println("No item matching title \"" + title + "\" found in the cart.");
         }
+    }
+
+    public void sortByTitleCost() {
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+        System.out.println("Đã sắp xếp giỏ hàng theo Tiêu đề (A-Z) -> Giá (Giảm dần).");
+    }
+    // --- THÊM 2 HÀM SẮP XẾP NÀY VÀO CUỐI LỚP CART ---
+    // Sắp xếp theo Giá rồi đến Tiêu đề [cite: 1340]
+    public void sortByCostTitle() {
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+        System.out.println("Đã sắp xếp giỏ hàng theo Giá (Giảm dần) -> Tiêu đề (A-Z).");
+    }
+    // Phương thức làm trống giỏ hàng
+    public void emptyCart() {
+        itemsOrdered.clear();
     }
 }
