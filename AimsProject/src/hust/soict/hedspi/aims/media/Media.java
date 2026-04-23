@@ -6,7 +6,7 @@ public abstract class Media {
     private String category;
     private float cost;
 
-    // Cập nhật constructor 
+    // Cập nhật constructor
     public Media(int id, String title, String category, float cost) {
         this.id = id;
         this.title = title;
@@ -19,4 +19,22 @@ public abstract class Media {
     public void setTitle(String title) { this.title = title; }
     public String getCategory() { return category; }
     public float getCost() { return cost; }
+    @Override
+    public boolean equals(Object obj) {
+        // 1. Nếu 2 đối tượng trỏ đến cùng 1 vùng nhớ -> chắc chắn giống nhau
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Media)) {
+            return false;
+        }
+
+        // 2. Ép kiểu an toàn và so sánh tiêu đề
+        Media other = (Media) obj;
+        if (this.title != null && this.title.equalsIgnoreCase(other.getTitle())) {
+            return true;
+        }
+
+        return false;
+    }
 }

@@ -20,4 +20,26 @@ public class Track implements Playable {
             System.out.println("Track " + title + " cannot be played.");
         }
     }
+    @Override
+    public boolean equals(Object obj) {
+        // 1. Kiểm tra cùng vùng nhớ
+        if (this == obj) {
+            return true;
+        }
+
+        // 2. Kiểm tra kiểu đối tượng để tránh lỗi ClassCastException
+        if (!(obj instanceof Track)) {
+            return false;
+        }
+
+        // 3. Ép kiểu an toàn và so sánh cả title và length
+        Track other = (Track) obj;
+        if (this.length == other.getLength()
+                && this.title != null
+                && this.title.equalsIgnoreCase(other.getTitle())) {
+            return true;
+        }
+
+        return false;
+    }
 }
