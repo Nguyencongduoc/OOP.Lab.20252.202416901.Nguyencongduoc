@@ -1,7 +1,7 @@
 package src.hust.soict.hedspi.test.store;
 
 import src.hust.soict.hedspi.aims.store.Store;
-import src.hust.soict.hedspi.aims.disc.DigitalVideoDisc;
+import src.hust.soict.hedspi.aims.media.DigitalVideoDisc;
 public class StoreTest {
     public static void main(String[] args) {
         // Tạo một cửa hàng mới
