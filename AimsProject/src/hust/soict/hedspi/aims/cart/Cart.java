@@ -77,6 +77,15 @@ public class Cart {
             System.out.println("No item matching title \"" + title + "\" found in the cart.");
         }
     }
+    // Hàm hỗ trợ lấy Object Media từ Giỏ hàng bằng Tiêu đề
+    public Media searchMediaByTitle(String title) {
+        for (Media media : itemsOrdered) {
+            if (media.getTitle().equalsIgnoreCase(title)) {
+                return media;
+            }
+        }
+        return null;
+    }
 
     public void sortByTitleCost() {
         Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);

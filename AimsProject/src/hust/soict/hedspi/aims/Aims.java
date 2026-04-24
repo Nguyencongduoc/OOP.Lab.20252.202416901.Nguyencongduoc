@@ -129,9 +129,23 @@ public class Aims {
     }
 
     public static void updateStore() {
-        System.out.println("Chức năng cập nhật kho (Add/Remove Media) - [Tự thực hiện]");
-    }
+        System.out.println("1. Thêm Media vào kho | 2. Xóa Media khỏi kho | 0. Back");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
 
+        if (choice == 2) {
+            System.out.print("Nhập tiêu đề Media muốn xóa: ");
+            String title = scanner.nextLine();
+            Media media = store.searchByTitle(title);
+            if (media != null) {
+                store.removeMedia(media);
+            } else {
+                System.out.println("Không tìm thấy sản phẩm trong kho.");
+            }
+        } else if (choice == 1) {
+            System.out.println("Chức năng thêm mới từ Console đang được xây dựng (Cần nhập nhiều thuộc tính)...");
+        }
+    }
     public static void viewCart() {
         cart.print();
         int choice;
@@ -190,12 +204,26 @@ public class Aims {
     private static void removeMediaFromCart() {
         System.out.print("Nhập tiêu đề muốn xóa: ");
         String title = scanner.nextLine();
-        // Logic tìm và xóa trong Cart
+        Media media = cart.searchMediaByTitle(title); // Dùng hàm vừa tạo thêm ở Cart.java
+        if (media != null) {
+            cart.removeMedia(media);
+        } else {
+            System.out.println("Không tìm thấy sản phẩm này trong giỏ hàng.");
+        }
     }
 
     private static void playMediaInCart() {
         System.out.print("Nhập tiêu đề muốn Play: ");
         String title = scanner.nextLine();
-        // Logic tìm và gọi play() trong Cart
+        Media media = cart.searchMediaByTitle(title); // Dùng hàm vừa tạo thêm ở Cart.java
+        if (media != null) {
+            if (media instanceof Playable) {
+                ((Playable) media).play();
+            } else {
+                System.out.println("Sản phẩm này không hỗ trợ Play (Ví dụ: Sách).");
+            }
+        } else {
+            System.out.println("Không tìm thấy sản phẩm này trong giỏ hàng.");
+        }
     }
 }
