@@ -2,7 +2,6 @@ package hust.soict.hedspi.aims.cart;
 
 import hust.soict.hedspi.aims.media.Media;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Collections;
 public class Cart {
     private ArrayList<Media> itemsOrdered = new ArrayList<>();
