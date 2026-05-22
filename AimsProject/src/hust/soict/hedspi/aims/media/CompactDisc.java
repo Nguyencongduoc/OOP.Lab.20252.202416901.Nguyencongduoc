@@ -1,51 +1,34 @@
 package src.hust.soict.hedspi.aims.media;
 
-import java.util.ArrayList;
-
-public class CompactDisc extends Disc implements Playable {
+public class CompactDisc extends Media implements Playable {
     private String artist;
-    private ArrayList<Track> tracks = new ArrayList<>();
+    private int    length; // in minutes
 
-    public CompactDisc(int id, String title, String category, float cost, String director, String artist) {
-        super(id, title, category, cost, 0, director); // length CD được tính động
+    public CompactDisc() {}
+
+    public CompactDisc(String title, String category, float cost,
+                       String artist, int length) {
+        super(title, category, cost);
         this.artist = artist;
+        this.length = length;
     }
 
+    // ---- Getters / Setters ------------------------------------------
     public String getArtist() { return artist; }
+    public int    getLength() { return length; }
 
-    public void addTrack(Track track) {
-        if (!tracks.contains(track)) tracks.add(track);
-    }
+    public void setArtist(String artist) { this.artist = artist; }
+    public void setLength(int    length) { this.length = length; }
 
-    public void removeTrack(Track track) {
-        tracks.remove(track);
-    }
-
-    // Tính tổng chiều dài các Track
+    // ---- Playable ---------------------------------------------------
     @Override
-    public int getLength() {
-        int sum = 0;
-        for (Track track : tracks) sum += track.getLength();
-        return sum;
+    public String play() {
+        return String.format("Playing CD: \"%s\" by %s (%d min)", getTitle(), artist, length);
     }
 
-    @Override
-    public void play() {
-        System.out.println("Playing CD: " + getTitle() + " by " + artist);
-        for (Track track : tracks) {
-            track.play();
-        }
-    }
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("CD - ").append(getTitle()).append(" - ").append(getCategory())
-                .append(" - ").append(getArtist()).append(" - ").append(getDirector())
-                .append(" - ").append(getLength()).append(": ").append(getCost()).append(" $\n");
-        sb.append("   Tracks:\n");
-        for (Track t : tracks) {
-            sb.append("      ").append(t.toString()).append("\n");
-        }
-        return sb.toString();
+        return String.format("CompactDisc[title=\"%s\", artist=%s, length=%d, cost=%.2f]",
+                getTitle(), artist, length, getCost());
     }
 }

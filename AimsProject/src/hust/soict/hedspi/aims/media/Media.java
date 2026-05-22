@@ -1,41 +1,52 @@
 package src.hust.soict.hedspi.aims.media;
-import java.util.Comparator;
+
+import java.util.Objects;
+
 public abstract class Media {
-    private int id;
-    private String title;
-    private String category;
-    private float cost;
-    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
-    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
-    // Cập nhật constructor
-    public Media(int id, String title, String category, float cost) {
-        this.id = id;
-        this.title = title;
-        this.category = category;
-        this.cost = cost;
+    private static int idCounter = 0;
+
+    private int     id;
+    private String  title;
+    private String  category;
+    private float   cost;
+
+    // ---- Constructors -----------------------------------------------
+    public Media() {
+        this.id = ++idCounter;
     }
 
-    public int getId() { return id; }
-    public String getTitle() { return title; }
-    public void setTitle(String title) { this.title = title; }
+    public Media(String title, String category, float cost) {
+        this();
+        this.title    = title;
+        this.category = category;
+        this.cost     = cost;
+    }
+
+    // ---- Getters / Setters ------------------------------------------
+    public int    getId()       { return id; }
+    public String getTitle()    { return title; }
     public String getCategory() { return category; }
-    public float getCost() { return cost; }
+    public float  getCost()     { return cost; }
+
+    public void setTitle   (String title)    { this.title    = title;    }
+    public void setCategory(String category) { this.category = category; }
+    public void setCost    (float  cost)     { this.cost     = cost;     }
+
+    // ---- Utilities --------------------------------------------------
     @Override
-    public boolean equals(Object obj) {
-        // 1. Nếu 2 đối tượng trỏ đến cùng 1 vùng nhớ -> chắc chắn giống nhau
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof Media)) {
-            return false;
-        }
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Media)) return false;
+        Media m = (Media) o;
+        return id == m.id;
+    }
 
-        // 2. Ép kiểu an toàn và so sánh tiêu đề
-        Media other = (Media) obj;
-        if (this.title != null && this.title.equalsIgnoreCase(other.getTitle())) {
-            return true;
-        }
+    @Override
+    public int hashCode() { return Objects.hash(id); }
 
-        return false;
+    @Override
+    public String toString() {
+        return String.format("Media[id=%d, title=\"%s\", category=%s, cost=%.2f]",
+                id, title, category, cost);
     }
 }

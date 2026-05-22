@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AimsProject/AimsProject.iml" filepath="$PROJECT_DIR$/AimsProject/AimsProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GUIProject/GUIProject.iml" filepath="$PROJECT_DIR$/GUIProject/GUIProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/OOP.Lab.20252.202416901.Nguyencongduoc.iml" filepath="$PROJECT_DIR$/.idea/OOP.Lab.20252.202416901.Nguyencongduoc.iml" />
     </modules>
   </component>
