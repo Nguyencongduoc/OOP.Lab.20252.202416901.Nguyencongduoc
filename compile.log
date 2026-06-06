@@ -1,0 +1,75 @@
+GUIProject/src/hust/soict/hedspi/aims/screen/manager/MediaStore.java:52: error: incompatible types: void cannot be converted to String
+        String message = ((Playable) media).play();
+                                                ^
+GUIProject/src/hust/soict/hedspi/aims/screen/manager/AddCompactDiscToStoreScreen.java:39: error: constructor CompactDisc in class CompactDisc cannot be applied to given types;
+        CompactDisc cd = new CompactDisc(title, category, cost, artist, length);
+                         ^
+  required: int,String,String,float,String,String
+  found:    String,String,float,String,int
+  reason: actual and formal argument lists differ in length
+GUIProject/src/hust/soict/hedspi/aims/screen/manager/AddDigitalVideoDiscToStoreScreen.java:39: error: constructor DigitalVideoDisc in class DigitalVideoDisc cannot be applied to given types;
+        DigitalVideoDisc dvd = new DigitalVideoDisc(title, category, cost, director, length);
+                               ^
+  required: int,String,String,float,int,String
+  found:    String,String,float,String,int
+  reason: actual and formal argument lists differ in length
+GUIProject/src/hust/soict/hedspi/aims/screen/manager/StoreManagerScreen.java:108: error: cannot find symbol
+        ArrayList<Media> mediaInStore = store.getItemsInStore();
+                                             ^
+  symbol:   method getItemsInStore()
+  location: variable store of type Store
+GUIProject/src/hust/soict/hedspi/aims/screen/manager/StoreManagerScreen.java:119: error: constructor DigitalVideoDisc in class DigitalVideoDisc cannot be applied to given types;
+        store.addMedia(new DigitalVideoDisc(
+                       ^
+  required: int,String,String,float,int,String
+  found:    String,String,float,String,int
+  reason: actual and formal argument lists differ in length
+GUIProject/src/hust/soict/hedspi/aims/screen/manager/StoreManagerScreen.java:121: error: constructor DigitalVideoDisc in class DigitalVideoDisc cannot be applied to given types;
+        store.addMedia(new DigitalVideoDisc(
+                       ^
+  required: int,String,String,float,int,String
+  found:    String,String,float,String,int
+  reason: actual and formal argument lists differ in length
+GUIProject/src/hust/soict/hedspi/aims/screen/manager/StoreManagerScreen.java:123: error: constructor DigitalVideoDisc in class DigitalVideoDisc cannot be applied to given types;
+        store.addMedia(new DigitalVideoDisc(
+                       ^
+  required: int,String,String,float,int,String
+  found:    String,String,float,String,int
+  reason: actual and formal argument lists differ in length
+GUIProject/src/hust/soict/hedspi/aims/screen/manager/StoreManagerScreen.java:125: error: constructor DigitalVideoDisc in class DigitalVideoDisc cannot be applied to given types;
+        store.addMedia(new DigitalVideoDisc(
+                       ^
+  required: int,String,String,float,int,String
+  found:    String,String,float,String,int
+  reason: actual and formal argument lists differ in length
+GUIProject/src/hust/soict/hedspi/aims/screen/manager/StoreManagerScreen.java:128: error: constructor CompactDisc in class CompactDisc cannot be applied to given types;
+        store.addMedia(new CompactDisc(
+                       ^
+  required: int,String,String,float,String,String
+  found:    String,String,float,String,int
+  reason: actual and formal argument lists differ in length
+GUIProject/src/hust/soict/hedspi/aims/screen/manager/StoreManagerScreen.java:130: error: constructor CompactDisc in class CompactDisc cannot be applied to given types;
+        store.addMedia(new CompactDisc(
+                       ^
+  required: int,String,String,float,String,String
+  found:    String,String,float,String,int
+  reason: actual and formal argument lists differ in length
+GUIProject/src/hust/soict/hedspi/aims/screen/manager/StoreManagerScreen.java:133: error: constructor Book in class Book cannot be applied to given types;
+        store.addMedia(new Book(
+                       ^
+  required: int,String,String,float
+  found:    String,String,float,String,String
+  reason: actual and formal argument lists differ in length
+GUIProject/src/hust/soict/hedspi/aims/screen/manager/StoreManagerScreen.java:135: error: constructor Book in class Book cannot be applied to given types;
+        store.addMedia(new Book(
+                       ^
+  required: int,String,String,float
+  found:    String,String,float,String,String
+  reason: actual and formal argument lists differ in length
+GUIProject/src/hust/soict/hedspi/aims/screen/manager/StoreManagerScreen.java:137: error: constructor Book in class Book cannot be applied to given types;
+        store.addMedia(new Book(
+                       ^
+  required: int,String,String,float
+  found:    String,String,float,String,String
+  reason: actual and formal argument lists differ in length
+13 errors

@@ -8,6 +8,15 @@ public class Book extends Media {
         super(id, title, category, cost);
     }
 
+    // Overloaded constructor used by GUI code
+    public Book(String title, String category, float cost, String author, String format) {
+        this(0, title, category, cost);
+        if (author != null && !author.isEmpty()) {
+            addAuthor(author);
+        }
+        // format ignored for now
+    }
+
     public void addAuthor(String authorName) {
         if (!authors.contains(authorName)) {
             authors.add(authorName);

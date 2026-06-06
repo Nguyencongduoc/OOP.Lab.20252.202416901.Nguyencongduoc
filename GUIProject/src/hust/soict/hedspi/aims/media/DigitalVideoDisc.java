@@ -6,13 +6,21 @@ public class DigitalVideoDisc extends Disc implements Playable {
         super(id, title, category, cost, length, director);
     }
 
+    // Overloaded constructor for code that doesn't provide id
+    public DigitalVideoDisc(String title, String category, float cost, String director, int length) {
+        this(0, title, category, cost, length, director);
+    }
+
     @Override
-    public void play() {
+    public String play() {
         if (this.getLength() > 0) {
-            System.out.println("Playing DVD: " + this.getTitle());
-            System.out.println("DVD length: " + this.getLength());
+            String msg = "Playing DVD: " + this.getTitle() + " (Length: " + this.getLength() + ")";
+            System.out.println(msg);
+            return msg;
         } else {
-            System.out.println("DVD " + this.getTitle() + " cannot be played.");
+            String msg = "DVD " + this.getTitle() + " cannot be played.";
+            System.out.println(msg);
+            return msg;
         }
     }
     @Override

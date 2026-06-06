@@ -11,6 +11,12 @@ public class CompactDisc extends Disc implements Playable {
         this.artist = artist;
     }
 
+    // Overloaded constructor for code that provides artist and length
+    public CompactDisc(String title, String category, float cost, String artist, int length) {
+        super(0, title, category, cost, length, "");
+        this.artist = artist;
+    }
+
     public String getArtist() { return artist; }
 
     public void addTrack(Track track) {
@@ -30,11 +36,15 @@ public class CompactDisc extends Disc implements Playable {
     }
 
     @Override
-    public void play() {
-        System.out.println("Playing CD: " + getTitle() + " by " + artist);
+    public String play() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Playing CD: ").append(getTitle()).append(" by ").append(artist);
+        System.out.println(sb.toString());
         for (Track track : tracks) {
-            track.play();
+            String tmsg = track.play();
+            sb.append("\n").append(tmsg);
         }
+        return sb.toString();
     }
     @Override
     public String toString() {

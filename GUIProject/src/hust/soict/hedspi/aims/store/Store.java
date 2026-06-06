@@ -45,4 +45,9 @@ import java.util.ArrayList;
             }
             return null;
         }
+
+        // Getter for GUI use
+        public ArrayList<Media> getItemsInStore() {
+            return itemsInStore;
+        }
     }

@@ -1,0 +1,60 @@
+[33m18e219e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mrelease/lab04[m[33m, [m[1;31morigin/release/lab04[m[33m)[m Update release/lab04
+[33m7f2e669[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m Painter
+[33ma9ed681[m[33m ([m[1;32mfeature/Painter[m[33m)[m Merge pull request #14 from Nguyencongduoc/release/lab04
+[33m66ead00[m Sai refactor
+[33ma5993c7[m change
+[33m60a00a6[m Submit
+[33m85f4650[m[33m ([m[1;32mrefactor/lab04[m[33m)[m update answers.txt
+[33mdb78d5e[m diagram
+[33m87368ff[m Merge pull request #13 from Nguyencongduoc/feature/screen/manager
+[33m88b9482[m[33m ([m[1;31morigin/feature/screen/manager[m[33m)[m screen
+[33m1af6b61[m Tien xu ly
+[33m6006a8f[m[33m ([m[1;31morigin/feature/swingcomponents[m[33m)[m Swing
+[33m32f32b5[m[33m ([m[1;32mfeature/swingcomponents[m[33m)[m Section 1.1
+[33m8caa74f[m[33m ([m[1;31morigin/refactor/lab04[m[33m)[m refactor and add new project
+[33m0a882d9[m[33m ([m[1;31morigin/release/lab03[m[33m, [m[1;31morigin/feature/AWT[m[33m, [m[1;32mrelease/lab03[m[33m)[m Merge pull request #12 from Nguyencongduoc/feature/aims-project/add-requirements
+[33mcf4bc78[m ReadingAssignment
+[33mc1d9c4b[m Merge pull request #11 from Nguyencongduoc/topic/aims-project/update-class-diagram/lab03
+[33m60fd51a[m[33m ([m[1;31morigin/topic/aims-project/update-class-diagram/lab03[m[33m, [m[1;32mtopic/aims-project/update-class-diagram/lab03[m[33m)[m Refactor
+[33m942593e[m Update UML
+[33m7c761b0[m Fix
+[33m759b03f[m Merge pull request #10 from Nguyencongduoc/topic/aims-project/update-class-diagram/lab03
+[33m720c2e4[m section 16-18
+[33m5717dd6[m[33m ([m[1;31morigin/topic/method-override[m[33m, [m[1;32mtopic/method-override[m[33m)[m Section 15 - override
+[33m61957bf[m Section 8 - 14
+[33ma6ed29a[m Merge pull request #9 from Nguyencongduoc/feature/other-projects/string-concat
+[33me2c827e[m[33m ([m[1;31morigin/feature/other-projects/string-concat[m[33m, [m[1;32mfeature/other-projects/string-concat[m[33m)[m Section 6
+[33m7b16066[m[33m ([m[1;31morigin/feature/aims-project/add-store[m[33m, [m[1;32mfeature/aims-project/add-store[m[33m)[m Section 5 - Store
+[33mda39159[m Merge pull request #8 from Nguyencongduoc/feature/aims-project/add-cart
+[33me73acc6[m[33m ([m[1;31morigin/feature/aims-project/add-cart[m[33m, [m[1;32mfeature/aims-project/add-cart[m[33m)[m Digital
+[33m881c42d[m Section 4
+[33mab8e2e5[m Merge branch 'refactor/lab03'
+[33m55bd9ac[m[33m ([m[1;31morigin/refactor/lab03[m[33m, [m[1;32mrefactor/lab03[m[33m)[m refactor
+[33mfc0b6a8[m[33m ([m[1;32mtopic/reading-assignment[m[33m)[m Xoa file thua in main
+[33mad83558[m Merge branch 'refactor/lab03'
+[33mfc9d8e2[m refactor
+[33m7d2ca6f[m Commit lai cac file con thieu o 2 bai dau
+[33mb736fa4[m Update
+[33md1e8f91[m Update
+[33mc4d0c64[m Merge remote-tracking branch 'origin/main'
+[33m5f9dbd4[m Chuan lai cau truc
+[33mab61e9e[m Merge pull request #6 from Nguyencongduoc/topic/readingassignment
+[33m871a35e[m[33m ([m[1;31morigin/topic/readingassignment[m[33m)[m Update readingassignment
+[33m491ed75[m Merge pull request #5 from Nguyencongduoc/feature/initial-aims
+[33m5880edd[m[33m ([m[1;31morigin/feature/initial-aims[m[33m)[m Update file answers
+[33m287a5d1[m Merge pull request #4 from Nguyencongduoc/topic/class-diagram
+[33ma394807[m[33m ([m[1;31morigin/topic/class-diagram[m[33m)[m Merge pull request #3 from Nguyencongduoc/main
+[33m9a25320[m Merge pull request #1 from Nguyencongduoc/topic/use-case-diagram
+[33mf011ba3[m Merge pull request #2 from Nguyencongduoc/feature/initial-aims
+[33m7083258[m Code
+[33m3ab8c51[m ClassDiagram
+[33md922d64[m[33m ([m[1;31morigin/topic/use-case-diagram[m[33m)[m New
+[33m98240ca[m Add anh
+[33m8c74523[m Use-case-diagram
+[33mc03e641[m Submit answers.txt
+[33mea474f3[m Completed 2.2.2 2.2.3 2.2.4
+[33m16d3687[m Completed 2.2.1
+[33m59a2e0e[m[33m ([m[1;31morigin/release/lab01[m[33m, [m[1;32mrelease/lab01[m[33m)[m Finish code
+[33ma893d82[m Update 3 bai tiep
+[33mb5797d5[m Update 3 bai dau
+[33m0ad56ba[m Initial commit

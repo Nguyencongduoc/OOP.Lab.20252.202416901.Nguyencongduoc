@@ -1,0 +1,29 @@
+The media 'Harry Potter and the Philosopher's Stone (2001)' has been added to the store.
+The media 'Harry Potter and the Chamber of Secrets (2002)' has been added to the store.
+The media 'Harry Potter and the Prisoner of Azkaban (2004)' has been added to the store.
+The media 'Harry Potter and the Goblet of Fire (2005)' has been added to the store.
+The media 'Fetch the Bolt Cutters' has been added to the store.
+The media 'Future Nostalgia' has been added to the store.
+Added author: Suzanne Collins
+The media 'The Hunger Games' has been added to the store.
+Added author: Suzanne Collins
+The media 'Catching Fire' has been added to the store.
+Added author: Suzanne Collins
+The media 'Mockingjay' has been added to the store.
+Exception in thread "AWT-EventQueue-0" java.awt.HeadlessException
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:158)
+	at java.desktop/java.awt.Window.<init>(Window.java:518)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:428)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:393)
+	at java.desktop/javax.swing.JFrame.<init>(JFrame.java:180)
+	at hust.soict.hedspi.aims.screen.manager.StoreManagerScreen.<init>(StoreManagerScreen.java:18)
+	at hust.soict.hedspi.aims.screen.manager.StoreManagerScreen.lambda$main$0(StoreManagerScreen.java:140)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:323)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:723)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:702)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
