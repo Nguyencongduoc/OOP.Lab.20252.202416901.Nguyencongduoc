@@ -1,9 +1,10 @@
-package src.hust.soict.hedspi.aims.screen.manager;
+package hust.soict.hedspi.aims.screen.manager;
 
-import java.awt.*;
+import hust.soict.hedspi.aims.media.Book;
+import hust.soict.hedspi.aims.store.Store;
+
 import javax.swing.*;
-import src.hust.soict.hedspi.aims.media.Book;
-import src.hust.soict.hedspi.aims.store.Store;
+import java.awt.*;
 
 /**
  * Màn hình thêm Book vào Store.
