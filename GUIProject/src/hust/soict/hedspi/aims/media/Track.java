@@ -1,49 +1,43 @@
 package hust.soict.hedspi.aims.media;
 
+import hust.soict.hedspi.aims.exception.PlayerException;
+
 public class Track implements Playable {
+
     private String title;
-    private int length;
+    private int    length;
 
     public Track(String title, int length) {
-        this.title = title;
+        this.title  = title;
         this.length = length;
     }
 
-    public String getTitle() { return title; }
-    public int getLength() { return length; }
+    public String getTitle()  { return title;  }
+    public int    getLength() { return length; }
 
     @Override
-    public String play() {
-        StringBuilder sb = new StringBuilder();
+    public void play() throws PlayerException {
         if (this.getLength() > 0) {
-            sb.append("Playing Track: ").append(title).append(" (Length: ").append(length).append(" min)");
+            System.out.println("Playing Track: " + title
+                    + " (Length: " + length + ")");
         } else {
-            sb.append("Track ").append(title).append(" cannot be played.");
+            System.err.println("ERROR: Track '" + title
+                    + "' length is non-positive!");
+            throw new PlayerException(
+                    "ERROR: Track '" + title + "' length is non-positive!");
         }
-        return sb.toString();
     }
+
     @Override
     public boolean equals(Object obj) {
-        // 1. Kiểm tra cùng vùng nhớ
-        if (this == obj) {
-            return true;
-        }
-
-        // 2. Kiểm tra kiểu đối tượng để tránh lỗi ClassCastException
-        if (!(obj instanceof Track)) {
-            return false;
-        }
-
-        // 3. Ép kiểu an toàn và so sánh cả title và length
+        if (this == obj) return true;
+        if (!(obj instanceof Track)) return false;
         Track other = (Track) obj;
-        if (this.length == other.getLength()
+        return this.length == other.length
                 && this.title != null
-                && this.title.equalsIgnoreCase(other.getTitle())) {
-            return true;
-        }
-
-        return false;
+                && this.title.equalsIgnoreCase(other.title);
     }
+
     @Override
     public String toString() {
         return "Track: " + title + " (Length: " + length + ")";

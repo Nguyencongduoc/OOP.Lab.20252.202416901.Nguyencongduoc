@@ -1,13 +1,18 @@
 package hust.soict.hedspi.aims.media;
 
+import hust.soict.hedspi.aims.exception.PlayerException;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class CompactDisc extends Disc implements Playable {
-    private String artist;
+
+    private String          artist;
     private ArrayList<Track> tracks = new ArrayList<>();
 
-    public CompactDisc(int id, String title, String category, float cost, String director, String artist) {
-        super(id, title, category, cost, 0, director); // length CD được tính động
+    public CompactDisc(int id, String title, String category,
+                       float cost, String director, String artist) {
+        super(id, title, category, cost, 0, director);
         this.artist = artist;
     }
 
@@ -21,33 +26,45 @@ public class CompactDisc extends Disc implements Playable {
         tracks.remove(track);
     }
 
-    // Tính tổng chiều dài các Track
     @Override
     public int getLength() {
         int sum = 0;
-        for (Track track : tracks) sum += track.getLength();
+        for (Track t : tracks) sum += t.getLength();
         return sum;
     }
 
     @Override
-    public String play() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Playing CD: ").append(getTitle()).append(" by ").append(artist).append("\n");
-        for (Track track : tracks) {
-            sb.append("  Track: ").append(track.getTitle()).append(" (").append(track.getLength()).append(" min)\n");
+    public void play() throws PlayerException {
+        if (this.getLength() > 0) {
+            System.out.println("Playing CD: " + getTitle() + " by " + artist);
+
+            Iterator<Track> iter = tracks.iterator();
+            while (iter.hasNext()) {
+                Track nextTrack = iter.next();
+                try {
+                    nextTrack.play();
+                } catch (PlayerException e) {
+                    // Log which track failed, then re-throw so the caller knows
+                    System.err.println("Track playback failed: " + e.getMessage());
+                    throw e;
+                }
+            }
+        } else {
+            System.err.println("ERROR: CD '" + getTitle()
+                    + "' length is non-positive!");
+            throw new PlayerException(
+                    "ERROR: CD '" + getTitle() + "' length is non-positive!");
         }
-        return sb.toString();
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("CD - ").append(getTitle()).append(" - ").append(getCategory())
-                .append(" - ").append(getArtist()).append(" - ").append(getDirector())
-                .append(" - ").append(getLength()).append(": ").append(getCost()).append(" $\n");
-        sb.append("   Tracks:\n");
-        for (Track t : tracks) {
-            sb.append("      ").append(t.toString()).append("\n");
-        }
+                .append(" - ").append(artist).append(" - ").append(getDirector())
+                .append(" - ").append(getLength()).append(": ").append(getCost())
+                .append(" $\n   Tracks:\n");
+        for (Track t : tracks) sb.append("      ").append(t).append("\n");
         return sb.toString();
     }
 }

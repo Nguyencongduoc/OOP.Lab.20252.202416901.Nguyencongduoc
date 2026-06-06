@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane style="-fx-border-color: black;"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml">
+
+    <VBox alignment="CENTER" prefWidth="305" prefHeight="175"
+          AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <Label fx:id="lblTitle" alignment="CENTER"
+               prefWidth="305" prefHeight="50"
+               wrapText="true"/>
+
+        <Label fx:id="lblCost" alignment="CENTER"
+               prefWidth="305" prefHeight="50"/>
+
+        <HBox alignment="CENTER" prefWidth="305" prefHeight="50" spacing="20">
+            <Button fx:id="btnAddToCart" text="Add to Cart"
+                    prefWidth="120" prefHeight="30"
+                    onAction="#btnAddToCartClicked"/>
+            <Button fx:id="btnPlay" text="Play"
+                    prefWidth="80" prefHeight="30"
+                    onAction="#btnPlayClicked"/>
+        </HBox>
+
+    </VBox>
+
+</AnchorPane>
