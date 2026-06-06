@@ -1,33 +1,6 @@
-1.3 Compare Swing and AWT elements:
+Question (Section 11): The Aims class must be updated to handle any exceptions generated when the play() methods are called. What happens when you don't update for them to catch?
 
-Compare the top-level containers in Swing and AWT:
-In AWT, the top-level container is Frame. Components can be added directly to the Frame. In Swing, the top-level container is JFrame. Because Swing components are lightweight, they cannot be added directly to the top-level container. Instead, they must be added to the content-pane of the top-level container.
-
-Compare the class name of components in AWT and the corresponding class's name in Swing:
-AWT components use standard names (e.g., TextField, Label, Button). Swing components use the same names but with a 'J' prefix (e.g., JTextField, JLabel, JButton).
-
-Compare the event-handling of Swing and AWT applications:
-The event-handling mechanism is the same for both AWT and Swing applications (e.g., both use ActionListener and the actionPerformed method).
-
-Compare the resulting appearances:
-AWT components are heavyweight and rely on the local operating system's native GUI, so they look like standard native OS applications. Swing components are lightweight and painted by Java, allowing them to have a consistent "Look and Feel" across all platforms.
-
-2.2.3 Complete inner class ButtonListener:
-private class ButtonListener implements ActionListener{
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        String button = e.getActionCommand();
-        if(button.charAt(0) >= '0' && button.charAt(0) <= '9') {
-            tfDisplay.setText(tfDisplay.getText() + button);
-        }
-    else if (button.equals("DEL")) {
-        String currentText = tfDisplay.getText();
-        if (currentText.length() > 0) {
-            tfDisplay.setText(currentText.substring(0, currentText.length() - 1));
-    }
-}
-        else {
-            tfDisplay.setText("");
-        }
-    }
-}
+Answer:
+If the Aims class is not updated to catch and handle the `PlayerException` thrown by the `play()` methods (e.g., when trying to play a media with a non-positive length), the exception will propagate up the call stack to the main method.
+Because the main method does not catch it either, the exception will be uncaught. This will cause the Java Virtual Machine (JVM) to terminate the program abruptly (crash) and print the stack trace of the `PlayerException` to the console (System.err).
+By using a try-catch block, we can gracefully handle the error (for example, by showing a Swing dialog or JavaFX alert to the user) and allow the application to continue running normally.
