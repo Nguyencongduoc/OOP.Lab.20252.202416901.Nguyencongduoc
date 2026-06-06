@@ -49,24 +49,34 @@ public class MediaStore extends JPanel {
     }
 
     private void showPlayDialog() {
-        String message = ((Playable) media).play();
+        try {
+            // Gọi hàm play() chạy logic ngầm (ví dụ in ra console hoặc quăng lỗi nếu có)
+            ((Playable) media).play();
 
-        JDialog dialog = new JDialog();
-        dialog.setTitle("Now Playing");
-        dialog.setSize(420, 140);
-        dialog.setLocationRelativeTo(null);
-        dialog.setModal(true);
+            // Tự tạo chuỗi message để hiển thị lên UI
+            String message = "Now playing: " + media.getTitle();
 
-        JLabel label = new JLabel(message, SwingConstants.CENTER);
-        label.setFont(new Font(label.getFont().getName(), Font.PLAIN, 14));
-        dialog.add(label, BorderLayout.CENTER);
+            JDialog dialog = new JDialog();
+            dialog.setTitle("Now Playing");
+            dialog.setSize(420, 140);
+            dialog.setLocationRelativeTo(null);
+            dialog.setModal(true);
 
-        JButton btnClose = new JButton("Close");
-        btnClose.addActionListener(e -> dialog.dispose());
-        JPanel south = new JPanel();
-        south.add(btnClose);
-        dialog.add(south, BorderLayout.SOUTH);
+            JLabel label = new JLabel(message, SwingConstants.CENTER);
+            label.setFont(new Font(label.getFont().getName(), Font.PLAIN, 14));
+            dialog.add(label, BorderLayout.CENTER);
 
-        dialog.setVisible(true);
+            JButton btnClose = new JButton("Close");
+            btnClose.addActionListener(e -> dialog.dispose());
+            JPanel south = new JPanel();
+            south.add(btnClose);
+            dialog.add(south, BorderLayout.SOUTH);
+
+            dialog.setVisible(true);
+
+        } catch (Exception e) {
+            // Bắt lỗi PlayerException (hoặc Exception chung) từ Lab 05 để hiển thị Popup báo lỗi
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Illegal Playable Media", JOptionPane.ERROR_MESSAGE);
+        }
     }
 }

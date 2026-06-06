@@ -1,24 +1,31 @@
 package hust.soict.hedspi.aims.media;
 
+import hust.soict.hedspi.aims.exception.PlayerException;
 
 public class DigitalVideoDisc extends Disc implements Playable {
-    public DigitalVideoDisc(int id, String title, String category, float cost, int length, String director) {
+
+    public DigitalVideoDisc(int id, String title, String category,
+                            float cost, int length, String director) {
         super(id, title, category, cost, length, director);
     }
 
     @Override
-    public String play() {
-        StringBuilder sb = new StringBuilder();
+    public void play() throws PlayerException {
         if (this.getLength() > 0) {
-            sb.append("Playing DVD: ").append(this.getTitle()).append("\n");
-            sb.append("DVD length: ").append(this.getLength()).append(" min");
+            System.out.println("Playing DVD: " + this.getTitle());
+            System.out.println("DVD length: " + this.getLength());
         } else {
-            sb.append("DVD ").append(this.getTitle()).append(" cannot be played.");
+            System.err.println("ERROR: DVD '" + getTitle()
+                    + "' length is non-positive!");
+            throw new PlayerException(
+                    "ERROR: DVD '" + getTitle() + "' length is non-positive!");
         }
-        return sb.toString();
     }
+
     @Override
     public String toString() {
-        return "DVD - " + getTitle() + " - " + getCategory() + " - " + getDirector() + " - " + getLength() + ": " + getCost() + " $";
+        return "DVD - " + getTitle() + " - " + getCategory()
+                + " - " + getDirector() + " - " + getLength()
+                + ": " + getCost() + " $";
     }
 }
