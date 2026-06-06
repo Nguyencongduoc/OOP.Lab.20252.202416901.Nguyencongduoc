@@ -13,12 +13,14 @@ public class Track implements Playable {
     public int getLength() { return length; }
 
     @Override
-    public void play() {
+    public String play() {
+        StringBuilder sb = new StringBuilder();
         if (this.getLength() > 0) {
-            System.out.println("Playing Track: " + title + " (Length: " + length + ")");
+            sb.append("Playing Track: ").append(title).append(" (Length: ").append(length).append(" min)");
         } else {
-            System.out.println("Track " + title + " cannot be played.");
+            sb.append("Track ").append(title).append(" cannot be played.");
         }
+        return sb.toString();
     }
     @Override
     public boolean equals(Object obj) {

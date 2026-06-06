@@ -36,7 +36,8 @@ public class AddDigitalVideoDiscToStoreScreen extends AddItemToStoreScreen {
         String director = tfDirector.getText().trim();
         int    length   = Integer.parseInt(tfLength.getText().trim());
 
-        DigitalVideoDisc dvd = new DigitalVideoDisc(title, category, cost, director, length);
+        int id = (int) (System.currentTimeMillis() % 100000);
+        DigitalVideoDisc dvd = new DigitalVideoDisc(id, title, category, cost, length, director);
         store.addMedia(dvd);
     }
 

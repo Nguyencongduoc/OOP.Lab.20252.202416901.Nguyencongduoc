@@ -1,4 +1,4 @@
-package src.hust.soict.hedspi.aims.screen.manager;
+package hust.soict.hedspi.aims.screen.manager;
 
 import java.awt.*;
 import javax.swing.*;
@@ -35,8 +35,7 @@ public class AddBookToStoreScreen extends AddItemToStoreScreen {
         String author    = tfAuthor.getText().trim();
         String coverType = tfCoverType.getText().trim();
 
-        int id = (int) (System.currentTimeMillis() % 100000);
-        Book book = new Book(id, title, category, cost);
+        Book book = new Book(title, category, cost, author, coverType);
         store.addMedia(book);
     }
 

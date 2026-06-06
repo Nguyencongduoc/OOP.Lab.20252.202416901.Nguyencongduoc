@@ -30,11 +30,13 @@ public class CompactDisc extends Disc implements Playable {
     }
 
     @Override
-    public void play() {
-        System.out.println("Playing CD: " + getTitle() + " by " + artist);
+    public String play() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Playing CD: ").append(getTitle()).append(" by ").append(artist).append("\n");
         for (Track track : tracks) {
-            track.play();
+            sb.append("  Track: ").append(track.getTitle()).append(" (").append(track.getLength()).append(" min)\n");
         }
+        return sb.toString();
     }
     @Override
     public String toString() {

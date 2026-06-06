@@ -117,25 +117,25 @@ public class StoreManagerScreen extends JFrame {
         Store store = new Store();
 
         store.addMedia(new DigitalVideoDisc(
-                "Harry Potter and the Philosopher's Stone (2001)", "Fantasy", 3.0f, "Chris Columbus", 152));
+                1, "Harry Potter and the Philosopher's Stone (2001)", "Fantasy", 3.0f, 152, "Chris Columbus"));
         store.addMedia(new DigitalVideoDisc(
-                "Harry Potter and the Chamber of Secrets (2002)", "Fantasy", 3.5f, "Chris Columbus", 161));
+                2, "Harry Potter and the Chamber of Secrets (2002)", "Fantasy", 3.5f, 161, "Chris Columbus"));
         store.addMedia(new DigitalVideoDisc(
-                "Harry Potter and the Prisoner of Azkaban (2004)", "Fantasy", 5.0f, "Alfonso Cuarón", 142));
+                3, "Harry Potter and the Prisoner of Azkaban (2004)", "Fantasy", 5.0f, 142, "Alfonso Cuarón"));
         store.addMedia(new DigitalVideoDisc(
-                "Harry Potter and the Goblet of Fire (2005)", "Fantasy", 4.5f, "Mike Newell", 157));
+                4, "Harry Potter and the Goblet of Fire (2005)", "Fantasy", 4.5f, 157, "Mike Newell"));
 
         store.addMedia(new CompactDisc(
-                "Fetch the Bolt Cutters", "Alternative", 10.39f, "Fiona Apple", 51));
+                5, "Fetch the Bolt Cutters", "Alternative", 10.39f, "", "Fiona Apple"));
         store.addMedia(new CompactDisc(
-                "Future Nostalgia", "Pop", 9.6f, "Dua Lipa", 37));
+                6, "Future Nostalgia", "Pop", 9.6f, "", "Dua Lipa"));
 
         store.addMedia(new Book(
-                "The Hunger Games", "Dystopian Fiction", 5.5f, "Suzanne Collins", "Paperback"));
+                7, "The Hunger Games", "Dystopian Fiction", 5.5f));
         store.addMedia(new Book(
-                "Catching Fire", "Dystopian Fiction", 4.9f, "Suzanne Collins", "Paperback"));
+                8, "Catching Fire", "Dystopian Fiction", 4.9f));
         store.addMedia(new Book(
-                "Mockingjay", "Dystopian Fiction", 5.1f, "Suzanne Collins", "Paperback"));
+                9, "Mockingjay", "Dystopian Fiction", 5.1f));
 
         SwingUtilities.invokeLater(() -> new StoreManagerScreen(store));
     }

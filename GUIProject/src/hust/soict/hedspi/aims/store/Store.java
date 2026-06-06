@@ -45,4 +45,8 @@ import java.util.ArrayList;
             }
             return null;
         }
+
+        public ArrayList<Media> getItemsInStore() {
+            return itemsInStore;
+        }
     }
